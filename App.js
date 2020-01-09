@@ -1,114 +1,75 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import { ScrollView } from 'react-native';
+import { createStackNavigator } from 'react-navigation-stack'; // Version can be specified in package.json
+import { createAppContainer } from 'react-navigation';
+import ImageLink from './components/imageLink';
+import WebScreen from './components/webScreen';
+class HomeScreen extends React.Component {
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+  static navigationOptions = {
+    title: 'News Live',
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  };
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+  render() {
+      return(
+      <ScrollView>
+       
+   <ImageLink 
+   navigation={this.props.navigation} 
+   imageSource="https://upload.wikimedia.org/wikipedia/commons/2/28/Aaj_tak_logo.png"
+   link="https://www.youtube.com/watch?v=Ky-OAhQ-szk"
+   />
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
+       
+<ImageLink 
+   navigation={this.props.navigation} 
+   imageSource="https://i.ytimg.com/vi/Utpa-lKzaD4/hqdefault_live.jpg"
+   link="https://www.youtube.com/watch?v=Utpa-lKzaD4"
+   />
 
-export default App;
+       
+<ImageLink 
+   navigation={this.props.navigation} 
+   imageSource="https://images.hindi.news18.com/optimize/7GKOoo1oyZUSkdqQPnirikqS1UA=/0x0/images.hindi.news18.com/ibnkhabar/uploads/459x306/jpg/2019/06/News18-15.jpg"
+   link="https://www.youtube.com/watch?v=o7qhqJ1ck8g"
+   />
+
+
+      </ScrollView>
+      
+      );
+  }
+}
+
+const RootStack = createStackNavigator(
+  {
+    Home: {
+      screen: HomeScreen
+    },
+    WebScreen:{
+      screen:WebScreen
+    }
+  },
+  {
+    initialRouteName: 'Home'
+  }
+);
+
+// export default class App extends React.Component {
+//   render() {
+//     return <RootStack />;
+//   }
+// }
+
+const AppContainer = createAppContainer(RootStack);
+
+// Now AppContainer is the main component for React to render
+export default AppContainer;
+
