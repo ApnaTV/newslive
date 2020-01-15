@@ -4,6 +4,8 @@ import { createStackNavigator } from 'react-navigation-stack'; // Version can be
 import { createAppContainer } from 'react-navigation';
 import ImageLink from './components/imageLink';
 import WebScreen from './components/webScreen';
+import NetworkCheck from './components/NetworkCheck';
+
 class HomeScreen extends React.Component {
 
   static navigationOptions = {
@@ -16,11 +18,11 @@ class HomeScreen extends React.Component {
       fontWeight: 'bold',
     },
   };
-
+  
   render() {
       return(
       <ScrollView>
-       
+       <NetworkCheck/>
    <ImageLink 
    navigation={this.props.navigation} 
    imageSource="https://upload.wikimedia.org/wikipedia/commons/2/28/Aaj_tak_logo.png"
