@@ -24,21 +24,24 @@ class HomeScreen extends React.Component {
    <ImageLink 
    navigation={this.props.navigation} 
    imageSource="https://upload.wikimedia.org/wikipedia/commons/2/28/Aaj_tak_logo.png"
-   link="https://www.youtube.com/watch?v=Ky-OAhQ-szk"
+  //  link="https://www.youtube.com/watch?v=Ky-OAhQ-szk"
+   link="https://www.youtube.com/embed/live_stream?channel=UCt4t-jeY85JegMlZ-E5UWtA"
    />
 
        
 <ImageLink 
    navigation={this.props.navigation} 
    imageSource="https://i.ytimg.com/vi/Utpa-lKzaD4/hqdefault_live.jpg"
-   link="https://www.youtube.com/watch?v=Utpa-lKzaD4"
+  //  link="https://www.youtube.com/watch?v=Utpa-lKzaD4"
+    link="https://www.youtube.com/embed/live_stream?channel=UC9CYT9gSNLevX5ey2_6CK0Q"
    />
 
        
 <ImageLink 
    navigation={this.props.navigation} 
    imageSource="https://images.hindi.news18.com/optimize/7GKOoo1oyZUSkdqQPnirikqS1UA=/0x0/images.hindi.news18.com/ibnkhabar/uploads/459x306/jpg/2019/06/News18-15.jpg"
-   link="https://www.youtube.com/watch?v=o7qhqJ1ck8g"
+  //  link="https://www.youtube.com/watch?v=o7qhqJ1ck8g"
+  link="https://www.youtube.com/embed/live_stream?channel=UCttspZesZIDEwwpVIgoZtWQ"
    />
 
 
