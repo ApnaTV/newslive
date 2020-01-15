@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack'; // Version can be
 import { createAppContainer } from 'react-navigation';
 import ImageLink from './components/imageLink';
 import WebScreen from './components/webScreen';
+// import AdBottom from './components/adBottom';
 class HomeScreen extends React.Component {
 
   static navigationOptions = {
@@ -41,6 +42,7 @@ class HomeScreen extends React.Component {
    link="https://www.youtube.com/watch?v=o7qhqJ1ck8g"
    />
 
+{/* <AdBottom/> */}
 
       </ScrollView>
       
